@@ -57,19 +57,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
         geofencingClient = LocationServices.getGeofencingClient(this);
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.setMinZoomPreference(15);
-
         showCurrentLocationOnMap();
-
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
@@ -198,7 +194,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-
         }
     }
 }
